@@ -1,0 +1,5 @@
+<!-- template reference -->
+<div>Numero1 <input type="number" #num1/> </div>
+<div>Numero2 <input type="number" #num2/> </div>
+<div><button (click)="sumar(+num1.value, +num2.value)">Sumar</button></div>
+<div>{{resultado}}</div>
