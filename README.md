@@ -5,15 +5,21 @@ npm install -g @angular/cli
 ng new ejemplossimplesangular
 ```
 
-Si falla
-```bash
-npm config get prefix
-```
+> Por si falla el comando anterior
+>```bash
+>npm config get prefix
+>```
 
 
-## Instalar la extensión 
+## Instalar la extensión de vscode
 - Angular Language Service
 
-
 ## Crear un componente
+```bash
 ng generate component components/menu
+```
+
+## Crear una pipe
+```bash
+ng generate pipe pipes/mayusculasPares
+```
