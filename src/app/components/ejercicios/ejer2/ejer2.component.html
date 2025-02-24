@@ -2,3 +2,28 @@
  Cuando se envíe el formulario se mostrará por pantalla el 
  IMC (indice de masa corporal) de esa persona
 -->
+
+<form [formGroup]="form" (ngSubmit)="handleSubmit()">
+    <label for="altura">Altura:</label>
+    <input name="altura" formControlName="altura" />
+    @if(form.get('altura')?.invalid && form.get('altura')?.dirty){
+    <small>
+        @if(form.get('altura')?.hasError('required')){
+        <p [style.color]="'red'">El campo altura es obligatorio</p>
+        }
+    </small>
+    }
+
+    <label for="peso">Peso:</label>
+    <input name="peso" formControlName="peso" />
+    @if(form.get('peso')?.invalid && form.get('peso')?.dirty){
+    <small>
+        @if(form.get('peso')?.hasError('required')){
+        <p [style.color]="'red'">El campo peso es obligatorio</p>
+        }
+    </small>
+    }
+
+    <button [disabled]="form.invalid">Calular</button>
+</form>
+Tu IMC es {{imc | number}} estas {{getImcText()}}
