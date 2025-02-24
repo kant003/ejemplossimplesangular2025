@@ -1,0 +1,26 @@
+<form [formGroup]="form" (ngSubmit)="handleSubmit()">
+    <label for="name">Nombre:</label>
+    <input name="name" formControlName="name" />
+    @if(form.get('name')?.invalid && form.get('name')?.dirty){
+    <small>
+        @if(form.get('name')?.hasError('required')){
+        <p [style.color]="'red'">El campo nombre es obligatorio</p>
+        }
+        @if(form.get('name')?.hasError('minlength')){
+        <p [style.color]="'red'">El campo nombre tiene que tener mínimo 3 caracteres</p>
+        }
+    </small>
+    }
+
+    <label for="email">Email:</label>
+    <input name="email" formControlName="email" />
+    @if(form.get('email')?.invalid && form.get('email')?.dirty){
+    <small>
+        @if(form.get('email')?.hasError('email')){
+        <p [style.color]="'red'">El campo tiene que ser un email válido</p>
+        }
+    </small>
+    }
+
+    <button [disabled]="form.invalid">Enviar</button>
+</form>

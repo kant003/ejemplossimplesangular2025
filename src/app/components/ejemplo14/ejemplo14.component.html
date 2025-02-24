@@ -1,0 +1,10 @@
+<div>Personajes de Rick and Morty</div>
+
+@let personajes = (personajes$ | async)?.results;
+
+@for(personaje of personajes; track personaje.id){
+    <p>{{personaje.name}}</p>
+    <img [src]="personaje.image" width="100px" alt="xxx"/>
+}@empty {
+    <p>No hay personajes</p>
+}

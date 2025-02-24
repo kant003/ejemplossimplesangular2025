@@ -1,0 +1,8 @@
+<!-- dada una lista de números (array) mostrar por pantalla solo los impares -->
+@for(numero of numeros; track numero){
+    @if(numero % 2 !== 0){
+        <span>{{numero}},</span>
+    }
+}@empty {
+    <p>No hay numeros</p>
+}

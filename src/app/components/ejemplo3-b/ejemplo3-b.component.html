@@ -1,0 +1,17 @@
+<!-- uso de for moderno -->
+@for(profe of profes; track profe){
+    <p>{{profe}}</p>
+}@empty {
+    <p>No hay profesores</p>
+}
+<hr/>
+@for(producto of productos; track producto.id){
+    <p>{{producto.nombre}}  {{producto.precio}}</p>
+}@empty {
+    <p>No hay productos</p>
+}
+
+@for(dato of usuario | keyvalue; track dato.key){
+    <p>{{dato.key}}  {{dato.value}}  {{dato | json}}</p>
+}
+
